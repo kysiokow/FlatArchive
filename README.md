@@ -24,18 +24,27 @@ Aplikacja umożliwia organizowanie i wsteczne datowanie (*backdating*) artykuł�
 
 ## 📐 Struktura katalogów
 
-Pliki `.md` z notatkami przechowywane są według czytelnego schematu dat:
+Pliki `.md` z notatkami oraz załączniki przechowywane są według czytelnego schematu dat:
 
 ```text
 FlatArchive/
-├── index.html            # Główny szablon aplikacji
-├── style.css             # Style wizualne
-├── app.js                # Dynamiczne ładowanie treści i obsługa UI
-├── generuj-indeks.js     # Skrypt Node.js generujący indeks wyszukiwania
-├── index.json            # Baza indeksowa dla wyszukiwarki (generowana auto)
-├── welcome.md            # Strona powitalna
-└── content/              # Folder z artykułami
+├── index.html          # Główny szablon aplikacji
+├── style.css           # Style wizualne
+├── app.js              # Dynamiczne ładowanie treści i obsługa UI
+├── generuj-indeks.php  # Skrypt PHP generujący indeks na serwerze (z autoryzacją)
+├── generuj-indeks.js   # Skrypt Node.js generujący indeks lokalnie
+├── config.example.php  # Szablon pliku konfiguracyjnego (z tajnym kluczem)
+├── index.json          # Baza indeksowa dla wyszukiwarki (generowana auto)
+├── welcome.md          # Strona powitalna
+├── content/            # Folder z artykułami Markdown
+│   └── YYYY/
+│       └── MM/
+│           └── DD/
+│               └── YYYYMMDD.md
+└── media/              # Folder z załącznikami (obrazki, wideo, PDF)
     └── YYYY/
         └── MM/
             └── DD/
-                └── YYYYMMDD.md
+                ├── zdjecie.jpg
+                ├── wideo.mp4
+                └── dokument.pdf
