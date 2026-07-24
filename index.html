@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archiwum Wiadomości</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Parser Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- Boczny panel -->
+  <aside id="sidebar">
+    <h2 class="brand">
+      <a href="#" onclick="wczytajPowitanie(); return false;">📂 Archiwum</a>
+    </h2>
+    
+    <!-- Wyszukiwarka -->
+    <div class="search-container">
+     <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Szukaj w artykulach..." 
+        oninput="obslugawyszukiwania(this.value)"
+>
+      <div id="search-results" class="search-results"></div>
+    </div>
+
+    <!-- Nawigacja drzewiasta -->
+    <nav id="menu-tree" class="menu-tree"></nav>
+
+    <!-- Przycisk generowania indeksu na dole sidebar -->
+<div class="reindex-container">
+  <button id="btn-reindex" class="btn-reindex" onclick="uruchomGenerowanieIndeksu()">
+    🔄 Przelicz indeks (JSON)
+  </button>
+  <div id="reindex-status" class="reindex-status"></div>
+</div>
+  </aside>
+
+  <!-- Główny kontener na treść -->
+  <main id="content">
+    <article id="articles-container">
+      <p class="loading">Ładowanie...</p>
+    </article>
+  </main>
+
+  <!-- Skrypt aplikacji -->
+  <script src="app.js"></script>
+</body>
+</html>
