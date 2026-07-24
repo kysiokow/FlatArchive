@@ -1,0 +1,7 @@
+# Wykluczamy tajny plik z hasłem
+config.php
+
+# Wykluczamy Twoje prywatne notatki i pliki
+content/20*
+media/20*
+index.json
