@@ -41,7 +41,7 @@ function parsujMarkdown(textMarkdown) {
 // 2. Ładowanie indeksu przeszukiwania (index.json)
 async function wczytajIndeks() {
   try {
-    const response = await fetch('index.json');
+    const response = await fetch('index.json?v=' + Date.now());
     if (response.ok) {
       indeksSzukania = await response.json();
     }
